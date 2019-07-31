@@ -94,21 +94,21 @@ public class Checkout extends TestConfiguration {
                 .verifyDeliveryPage();
     }
 
-    @Test(description = "Login on checkout with existing Private user")
-    public void checkoutExistingPrivateFull() {
-        WebDriverRunner.setWebDriver(createWebDriver(Thread.currentThread().getStackTrace()[1].getMethodName()));
-        new BasePage().openMainPage(TESTING_URL_SE)
-                .selectCompanyVisitorType()
-                .openProductListingForQuery("40046")
-                .addTheFirstProductToTheCart()
-                .openCart()
-                .goToCheckout()
-                .loginOnCheckout("vzotketest@gmail.com", "q1w2e3r4T%")
-                .addNewDeliveryAddressPrivate("TestFirstName", "TestLastName", "Test address 1", "12345", "TestCity")
-                .addPhoneNotification("+46712345671", "TestPhone")
-                .addOrderLabel("TEST ORDER IGNORE IT")
-                .gotoPaymentPage()
-                .gotoFinalizePage();
+//    @Test(description = "Login on checkout with existing Private user")
+//    public void checkoutExistingPrivateFull() {
+//        WebDriverRunner.setWebDriver(createWebDriver(Thread.currentThread().getStackTrace()[1].getMethodName()));
+//        new BasePage().openMainPage(TESTING_URL_SE)
+//                .selectCompanyVisitorType()
+//                .openProductListingForQuery("40046")
+//                .addTheFirstProductToTheCart()
+//                .openCart()
+//                .goToCheckout()
+//                .loginOnCheckout("vzotketest@gmail.com", "q1w2e3r4T%")
+//                .addNewDeliveryAddressPrivate("TestFirstName", "TestLastName", "Test address 1", "12345", "TestCity")
+//                .addPhoneNotification("+46712345671", "TestPhone")
+//                .addOrderLabel("TEST ORDER IGNORE IT")
+//                .gotoPaymentPage()
+//                .gotoFinalizePage();
 //                .checkGDPR()
 //                .checkPrivatePolicy()
 //                .gotoDibsPage()
