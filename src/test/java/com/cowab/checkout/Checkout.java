@@ -114,8 +114,8 @@ public class Checkout extends TestConfiguration {
 //                .gotoDibsPage()
 //                .confirmOrderWithMasterCard()
 //                .verifyThankYouPage();
-    }
-
-
 }
+
+
+
 
