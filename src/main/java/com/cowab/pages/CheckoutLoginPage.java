@@ -27,7 +27,7 @@ public class CheckoutLoginPage extends CheckoutBasePage {
         checkoutRegistration.getFieldAddress().sendKeys(user.getAddress());
         checkoutRegistration.getFieldPostCode().sendKeys(user.getPostCode());
         checkoutRegistration.getFieldCity().sendKeys(user.getCity());
-        checkoutRegistration.getFieldPhone().sendKeys(user.getPhone());
+        //checkoutRegistration.getFieldPhone().sendKeys(user.getPhone());
         checkoutRegistration.getCheckboxSecurityPolicy().click();
         checkoutRegistration.getBtnContinueRegistration().click();
         waitPageLoading();
@@ -53,7 +53,7 @@ public class CheckoutLoginPage extends CheckoutBasePage {
         checkoutRegistration.getFieldAddress().sendKeys(user.getAddress());
         checkoutRegistration.getFieldPostCode().sendKeys(user.getPostCode());
         checkoutRegistration.getFieldCity().sendKeys(user.getCity());
-        checkoutRegistration.getFieldPhone().sendKeys(user.getPhone());
+        //checkoutRegistration.getFieldPhone().sendKeys(user.getPhone());
         checkoutRegistration.getCheckboxSecurityPolicy().click();
         checkoutRegistration.getBtnContinueRegistration().click();
         waitPageLoading();

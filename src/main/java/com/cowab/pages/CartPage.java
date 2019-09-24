@@ -56,7 +56,6 @@ public class CartPage extends BasePage {
         return this;
     }
 
-
     @Step("Increase quantity of the product: '{name}'  to 1")
     public CartPage decreaseProductQuantityByName(String name) {
         SelenideElement currentElement = getItemByName(name);
@@ -158,7 +157,6 @@ public class CartPage extends BasePage {
         }
         return totalPrice;
     }
-
 
     private SelenideElement getItemByName(String name) throws ElementNotFound {
         for (SelenideElement currentItem : cart.getListItemsInCart()) {

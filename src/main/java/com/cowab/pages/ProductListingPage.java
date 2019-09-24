@@ -16,6 +16,7 @@ public class ProductListingPage extends BasePage {
     @Step("Add the first product to the cart")
     public ProductListingPage addTheFirstProductToTheCart() {
         waitPageLoading();
+        productListing.getListProducts().first().hover();
         productListing.getBtnBuy().first().click();
         waitPageLoading();
         return this;

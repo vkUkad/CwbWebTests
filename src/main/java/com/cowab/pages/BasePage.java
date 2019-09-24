@@ -75,7 +75,7 @@ public class BasePage {
         loginPopup.getFieldAddress().sendKeys(user.getAddress());
         loginPopup.getFieldPostCode().sendKeys(user.getPostCode());
         loginPopup.getFieldCity().sendKeys(user.getCity());
-        loginPopup.getFieldPhone().sendKeys(user.getPhone());
+        //loginPopup.getFieldPhone().sendKeys(user.getPhone());
         loginPopup.getCheckboxSecurityPolicy().click();
         loginPopup.getBtnContinueRegistration().click();
         waitPageLoading();
@@ -99,7 +99,7 @@ public class BasePage {
         loginPopup.getFieldAddress().sendKeys(user.getAddress());
         loginPopup.getFieldPostCode().sendKeys(user.getPostCode());
         loginPopup.getFieldCity().sendKeys(user.getCity());
-        loginPopup.getFieldPhone().sendKeys(user.getPhone());
+        //loginPopup.getFieldPhone().sendKeys(user.getPhone());
         loginPopup.getCheckboxSecurityPolicy().click();
         loginPopup.getBtnContinueRegistration().click();
         waitPageLoading();

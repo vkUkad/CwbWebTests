@@ -16,9 +16,10 @@ import static com.cowab.utils.driver.MyDriverManager.createWebDriver;
 public class Cart extends TestConfiguration {
 
     @Test(description = "Add product to the cart")
-    @Video
+    //@Video
     public void openCart() {
         WebDriverRunner.setWebDriver(createWebDriver(Thread.currentThread().getStackTrace()[1].getMethodName()));
+
         new BasePage().openMainPage(TESTING_URL_SE)
                 .selectCompanyVisitorType()
                 .openProductListingForQuery("bord")
@@ -28,7 +29,7 @@ public class Cart extends TestConfiguration {
     }
 
     @Test(description = "Check cart count indicator")
-    @Video
+    //@Video
     public void verifyCartNumberIndicator() {
         WebDriverRunner.setWebDriver(createWebDriver(Thread.currentThread().getStackTrace()[1].getMethodName()));
         new BasePage().openMainPage(TESTING_URL_SE)
@@ -43,7 +44,7 @@ public class Cart extends TestConfiguration {
     }
 
     @Test(description = "Change products quantity in a cart")
-    @Video
+   //@Video
     public void changeProductQuantity() {
         WebDriverRunner.setWebDriver(createWebDriver(Thread.currentThread().getStackTrace()[1].getMethodName()));
         new BasePage().openMainPage(TESTING_URL_SE)
@@ -61,7 +62,7 @@ public class Cart extends TestConfiguration {
     }
 
     @Test(description = "Check Price behavior on cart")
-    @Video
+    //@Video
     public void verifyPriceInTheBasket() {
         WebDriverRunner.setWebDriver(createWebDriver(Thread.currentThread().getStackTrace()[1].getMethodName()));
         new BasePage().openMainPage(TESTING_URL_SE)

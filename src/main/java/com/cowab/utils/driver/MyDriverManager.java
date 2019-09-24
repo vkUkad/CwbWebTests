@@ -32,7 +32,9 @@ public class MyDriverManager {
         if (Configuration.DEBUG_MODE) {
 //            System.setProperty("webdriver.chrome.driver", getCustomDriverPath());
             WebDriverManager.chromedriver().setup();
-            return new ChromeDriver();
+            WebDriver driver = new ChromeDriver();
+            driver.manage().window().maximize();
+            return driver;
         } else {
             return createRemoteDriver(testName);
         }
@@ -69,7 +71,8 @@ public class MyDriverManager {
     }
 
     private static WebDriver createRemoteDriver(String testName) {
-        return new MyDriverManager().createCustomChromeRemoteDriver(Configuration.DESKTOP_REMOTE_URL, testName);
+        return new MyDriverManager()
+                .createCustomChromeRemoteDriver(Configuration.DESKTOP_REMOTE_URL, testName);
     }
 
     /***
@@ -95,8 +98,6 @@ public class MyDriverManager {
 
         return driver;
     }
-
-
 }
 
 

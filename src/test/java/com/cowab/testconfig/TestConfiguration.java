@@ -67,7 +67,7 @@ public class TestConfiguration {
         EnvironmentBuilder.getAllureEnvironment();
         WebDriverRunner.getWebDriver().close();
         if (result.getStatus() == ITestResult.FAILURE) {
-            addVideo();
+           // addVideo();
         }
     }
 }

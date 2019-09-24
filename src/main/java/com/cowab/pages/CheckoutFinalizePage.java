@@ -2,6 +2,13 @@ package com.cowab.pages;
 
 import com.cowab.elements.CheckoutFinalize;
 import io.qameta.allure.Step;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
+
+import java.awt.*;
+import java.awt.event.KeyEvent;
+
+import static com.codeborne.selenide.Selenide.$;
 
 public class CheckoutFinalizePage extends CheckoutBasePage {
 
@@ -9,16 +16,16 @@ public class CheckoutFinalizePage extends CheckoutBasePage {
 
 
     @Step("Check GDPR checkbox'")
-    public CheckoutFinalizePage checkGDPR() {
-        checkoutFinalize.getCheckboxGDPR().click();
-        waitPageLoading();
+    public CheckoutFinalizePage checkGDPR(WebDriver driver) {
         return this;
     }
 
     @Step("Check Private Policy checkbox'")
-    public CheckoutFinalizePage checkPrivatePolicy() {
-        checkoutFinalize.getCheckboxPrivatePolicy().click();
-        waitPageLoading();
+    public CheckoutFinalizePage checkPrivatePolicy(WebDriver driver) throws AWTException {
+        Robot bot = new Robot();
+        bot.mouseMove(1320, 800);
+        bot.mousePress(KeyEvent.BUTTON1_MASK);
+        bot.mouseRelease(KeyEvent.BUTTON1_MASK);
         return this;
     }
 
