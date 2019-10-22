@@ -30,6 +30,6 @@ public class CheckoutPayment {
         fieldCity = $("#City");
         fieldZipCode = $("#ZipCode");
         fieldInvoiceNote = $(".invoiceNote");
-        btnSubmit = $(".btn.mobile-to-pc-hidden");
+        btnSubmit = $("button[class='btn btn--primary-orange']");
     }
 }

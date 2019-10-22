@@ -1,0 +1,75 @@
+{
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "Market": {
+        "type": "string"
+      },
+      "CustomerNo": {
+        "type": "string"
+      },
+      "PartyNumber": {
+        "type": "string"
+      },
+      "Name": {
+        "type": "string"
+      },
+      "FirstName": {
+        "type": "string"
+      },
+      "MiddleName": {
+        "type": "string"
+      },
+      "LastName": {
+        "type": "string"
+      },
+      "Email": {
+        "type": "string"
+      },
+      "PersonalTitle": {
+        "type": "string"
+      },
+      "JobTitle": {
+        "type": "string"
+      },
+      "Memo": {
+        "type": "string"
+      },
+      "Attributes": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "object"
+        }
+      },
+      "Communications": {
+        "type": "array",
+        "items": {
+          "type": "object"
+        }
+      },
+      "LastSales": {
+        "format": "date-time",
+        "type": "string"
+      },
+      "Active": {
+        "type": "boolean"
+      },
+      "ModifiedBy": {
+        "type": "string"
+      },
+      "Created": {
+        "format": "date-time",
+        "type": "string"
+      },
+      "Modified": {
+        "format": "date-time",
+        "type": "string"
+      },
+      "Syncronized": {
+        "format": "date-time",
+        "type": "string"
+      }
+    }
+  }
+}

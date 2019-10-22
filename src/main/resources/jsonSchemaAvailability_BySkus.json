@@ -1,0 +1,45 @@
+{
+  "type": "object",
+  "properties": {
+    "Level": {
+      "type": "string"
+    },
+    "Week": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "Year": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "Items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "ItemNumber": {
+            "type": "string"
+          },
+          "Availability": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "Level": {
+            "type": "string"
+          },
+          "InventoryLocation": {
+            "type": "string"
+          },
+          "Week": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "Year": {
+            "format": "int32",
+            "type": "integer"
+          }
+        }
+      }
+    }
+  }
+}

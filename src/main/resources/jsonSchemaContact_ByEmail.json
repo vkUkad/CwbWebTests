@@ -1,0 +1,333 @@
+{
+  "type": "object",
+  "properties": {
+    "Contact": {
+      "type": "object",
+      "properties": {
+        "Market": {
+          "type": "string"
+        },
+        "CustomerNo": {
+          "type": "string"
+        },
+        "ContactId": {
+          "type": "string"
+        },
+        "PartyNumber": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "FirstName": {
+          "type": "string"
+        },
+        "MiddleName": {
+          "type": "string"
+        },
+        "LastName": {
+          "type": "string"
+        },
+        "Email": {
+          "type": "string"
+        },
+        "PersonalTitleId": {
+          "type": "string"
+        },
+        "PersonalTitle": {
+          "type": "string"
+        },
+        "JobTitle": {
+          "type": "string"
+        },
+        "Memo": {
+          "type": "string"
+        },
+        "Attributes": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object"
+          }
+        },
+        "Communications": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "Value": {
+                "type": "string"
+              },
+              "Type": {
+                "type": "string"
+              },
+              "IsPrimary": {
+                "type": "boolean"
+              }
+            }
+          }
+        },
+        "LastSales": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "Active": {
+          "type": "boolean"
+        },
+        "ModifiedBy": {
+          "type": "string"
+        },
+        "Created": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "Modified": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "Syncronized": {
+          "format": "date-time",
+          "type": "string"
+        }
+      }
+    },
+    "Customers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "RecId": {
+            "format": "int64",
+            "type": "integer"
+          },
+          "PartyNumber": {
+            "type": "string"
+          },
+          "Market": {
+            "type": "string"
+          },
+          "CustomerNo": {
+            "type": "string"
+          },
+          "Name": {
+            "type": "string"
+          },
+          "FirstName": {
+            "type": "string"
+          },
+          "LastName": {
+            "type": "string"
+          },
+          "InstanceRelationType": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "RelationType": {
+            "type": "string"
+          },
+          "PrimaryContactId": {
+            "type": "string"
+          },
+          "InvoiceEmail": {
+            "type": "string"
+          },
+          "Email": {
+            "type": "string"
+          },
+          "Phone": {
+            "type": "string"
+          },
+          "Currency": {
+            "type": "string"
+          },
+          "InvoiceMethod": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "OrgNumber": {
+            "type": "string"
+          },
+          "VatNumber": {
+            "type": "string"
+          },
+          "DunsNumber": {
+            "type": "string"
+          },
+          "EanCode": {
+            "type": "string"
+          },
+          "Segment": {
+            "type": "string"
+          },
+          "SubSegment": {
+            "type": "string"
+          },
+          "SalesDistrict": {
+            "type": "string"
+          },
+          "LineOfBusinessId": {
+            "type": "string"
+          },
+          "DlvTerm": {
+            "type": "string"
+          },
+          "PaymMode": {
+            "type": "string"
+          },
+          "DlvMode": {
+            "type": "string"
+          },
+          "PaymTermId": {
+            "type": "string"
+          },
+          "ChargeGroup": {
+            "type": "string"
+          },
+          "LineDisc": {
+            "type": "string"
+          },
+          "PriceGroup": {
+            "type": "string"
+          },
+          "CustomerGroup": {
+            "type": "string"
+          },
+          "ChainId": {
+            "type": "string"
+          },
+          "LastSales": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "AccountType": {
+            "type": "string"
+          },
+          "Telemarketing": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "NumberOfEmployees": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "ContactWorkerEmail": {
+            "type": "string"
+          },
+          "Status": {
+            "type": "string"
+          },
+          "ReasonCode": {
+            "type": "string"
+          },
+          "EInvoiceEANNumber": {
+            "type": "string"
+          },
+          "PurchaseOrderReference": {
+            "type": "string"
+          },
+          "Blocked": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "Memo": {
+            "type": "string"
+          },
+          "Addresses": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "Market": {
+                  "type": "string"
+                },
+                "CustomerNo": {
+                  "type": "string"
+                },
+                "AddressType": {
+                  "format": "int32",
+                  "type": "integer"
+                },
+                "Name": {
+                  "type": "string"
+                },
+                "Street": {
+                  "type": "string"
+                },
+                "ZipCode": {
+                  "type": "string"
+                },
+                "City": {
+                  "type": "string"
+                },
+                "County": {
+                  "type": "string"
+                },
+                "CountryRegionId": {
+                  "type": "string"
+                },
+                "State": {
+                  "type": "string"
+                },
+                "IsPrimary": {
+                  "type": "boolean"
+                },
+                "IsDefault": {
+                  "type": "boolean"
+                },
+                "RecId": {
+                  "format": "int64",
+                  "type": "integer"
+                },
+                "Modified": {
+                  "format": "date-time",
+                  "type": "string"
+                },
+                "ModifiedBy": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "Communications": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "Locator": {
+                  "type": "string"
+                },
+                "Type": {
+                  "type": "string"
+                },
+                "IsPrimary": {
+                  "type": "boolean"
+                },
+                "Modified": {
+                  "format": "date-time",
+                  "type": "string"
+                },
+                "ModifiedBy": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "ModifiedBy": {
+            "type": "string"
+          },
+          "Created": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "Modified": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "Syncronized": {
+            "format": "date-time",
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

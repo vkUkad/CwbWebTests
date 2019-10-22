@@ -30,7 +30,7 @@ public class TestTemplate extends TestConfiguration {
         open(TESTING_URL_SE);
 
         sleep(1000);
-        System.out.println("Test OK!");
+        System.out.println("TestApi OK!");
 
     }
 

@@ -16,26 +16,24 @@ import static com.cowab.utils.driver.MyDriverManager.createWebDriver;
 @Story("Login/Registration")
 public class Login extends TestConfiguration {
 
-    @Test(description = "Test login with a Company user")
+    @Test(description = "TestApi login with a Company user")
     public void loginCompany() {
         WebDriverRunner.setWebDriver(createWebDriver(Thread.currentThread().getStackTrace()[1].getMethodName()));
         new BasePage().openMainPage(TESTING_URL_SE)
                 .selectCompanyVisitorType()
-                .login("vzotke@gmail.com", "q1w2e3r4T%")
-                .verifyLoginName("Test")
+                .login("apitestsebus@mailinator.com", "Q!w2e3r4t5y6")
+                .verifyLoginName("Apitestname")
                 .logout();
         //todo add check if user is logged out
     }
 
-    @Test(description = "Test login with a Private user")
+    @Test(description = "TestApi login with a Private user")
     public void loginPrivate() {
         WebDriverRunner.setWebDriver(createWebDriver(Thread.currentThread().getStackTrace()[1].getMethodName()));
         new BasePage().openMainPage(TESTING_URL_SE)
                 .selectCompanyVisitorType()
-                .login("vzotketest@gmail.com", "q1w2e3r4T%")
-                .verifyLoginName("Test")
-                //todo the obsolete version, need to clarify why username was changed to 'Test'
-                //.verifyLoginName("TestFirstName")
+                .login("apitestsebus@mailinator.com", "Q!w2e3r4t5y6")
+                .verifyLoginName("Apitestname")
                 .logout();
     }
 
