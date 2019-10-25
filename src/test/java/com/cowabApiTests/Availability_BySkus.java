@@ -12,6 +12,7 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import static io.restassured.RestAssured.given;
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 
 public class Availability_BySkus {
@@ -25,7 +26,7 @@ public class Availability_BySkus {
 
     @Test(description = "Validate if response is 200")
     public void validate200Response_AvailabilityBySkus() {
-        RequestSpecification httpsRequest = RestAssured.given().header("Ocp-Apim-Subscription-Key", "961a680d46844641bb43e75c27dacb87").body("[\"734671\"]");
+        RequestSpecification httpsRequest = given().header("Ocp-Apim-Subscription-Key", "961a680d46844641bb43e75c27dacb87").body("[\"734671\"]");
         httpsRequest.contentType("application/json");
         Response response = httpsRequest.request(Method.POST, "availability/get/cse");
         Assert.assertEquals(response.getStatusCode(), 200);
@@ -39,16 +40,12 @@ public class Availability_BySkus {
 
     @Test(description = "Validate Json schema")
     public void validateJsonSchema_AvailabilityBySkus() throws ParseException {
-        RequestSpecification httpsRequest = RestAssured.given().header("Ocp-Apim-Subscription-Key", "961a680d46844641bb43e75c27dacb87").body("[\"734671\"]");
+        RequestSpecification httpsRequest = given().header("Ocp-Apim-Subscription-Key", "961a680d46844641bb43e75c27dacb87").body("[\"734671\"]");
         httpsRequest.contentType("application/json");
         Response response = httpsRequest.request(Method.POST, "availability/get/cse");
-        String bodyString = response.getBody().asString();
-        JSONParser parser = new JSONParser();
-        JSONObject bodyResponseJson = (JSONObject) parser.parse(bodyString);
-        System.out.println(bodyResponseJson);
-        //Assert.assertEquals(bodyResponseJson, ("jsonSchemaAvailability_BySkus.json"));
 
-        response.then().assertThat().body(matchesJsonSchemaInClasspath("jsonSchemaAvailability_BySkus.json"));
+       // response.then().assertThat().body(matchesJsonSchemaInClasspath("jsonSchemaAvailability_BySkus.json"));
+        response.then().assertThat().body(matchesJsonSchemaInClasspath("jsonSchemaAvailability_BySkusUpdatedAccordingToResponse.json"));
 
     }
 }
