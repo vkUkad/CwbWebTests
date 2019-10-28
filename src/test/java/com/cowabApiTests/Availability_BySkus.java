@@ -12,6 +12,8 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import java.util.ArrayList;
+
 import static io.restassured.RestAssured.given;
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 
@@ -32,10 +34,18 @@ public class Availability_BySkus {
         Assert.assertEquals(response.getStatusCode(), 200);
     }
 
-    //todo: update functionality
-    @Test(description = "Validate specific fields response: ")
+    @Test(description = "Validate specific fields response: itemNumber")
     public void validateSpecificFields_AvailabilityBySkus() {
-
+        RequestSpecification httpsRequest = given().header("Ocp-Apim-Subscription-Key", "961a680d46844641bb43e75c27dacb87").body("[\"734671\"]");
+        httpsRequest.contentType("application/json");
+        Response response = httpsRequest.request(Method.POST, "availability/get/cse");
+        JsonPath jsonPath = response.jsonPath();
+        ArrayList items = jsonPath.get("Items");
+        for (Object o : items) {
+            if (o.toString().contains("ItemNumber")) {
+                Assert.assertEquals(o.toString().contains("734671"), true);
+            }
+        }
     }
 
     @Test(description = "Validate Json schema")
@@ -43,9 +53,7 @@ public class Availability_BySkus {
         RequestSpecification httpsRequest = given().header("Ocp-Apim-Subscription-Key", "961a680d46844641bb43e75c27dacb87").body("[\"734671\"]");
         httpsRequest.contentType("application/json");
         Response response = httpsRequest.request(Method.POST, "availability/get/cse");
-
-       // response.then().assertThat().body(matchesJsonSchemaInClasspath("jsonSchemaAvailability_BySkus.json"));
+        System.out.println(response.getBody().asString());
         response.then().assertThat().body(matchesJsonSchemaInClasspath("jsonSchemaAvailability_BySkusUpdatedAccordingToResponse.json"));
-
     }
 }

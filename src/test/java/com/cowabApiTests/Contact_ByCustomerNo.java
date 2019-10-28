@@ -66,6 +66,6 @@ public class Contact_ByCustomerNo {
         RequestSpecification httpsRequest = RestAssured.given().header("Ocp-Apim-Subscription-Key", "961a680d46844641bb43e75c27dacb87");
         Response response = httpsRequest.request(Method.GET, "contact/get/cse/49003");
         System.out.println(response.getBody().asString());
-        response.then().body(matchesJsonSchemaInClasspath("jsonSchemaContact_ByCustomerNoUpdatedAccordingToResponse.json"));
+        response.then().body(matchesJsonSchemaInClasspath("jsonSchemaContact_ByCustomerNoCreatedFromResponse.json"));
     }
 }

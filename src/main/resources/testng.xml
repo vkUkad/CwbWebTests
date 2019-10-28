@@ -6,7 +6,10 @@
             <class name="com.cowab.login.Login"/>
             <class name="com.cowab.search.Search"/>
             <class name="com.cowab.cart.Cart"/>
-            <class name="com.cowab.checkout.Checkout"></class>
+            <class name="com.cowab.checkout.Checkout"/>
+            <class name="com.cowabApiTests.Availability_BySkus"/>
+            <class name="com.cowabApiTests.Contact_ByCustomerNo"/>
+            <class name="com.cowabApiTests.Contact_ByEmail"></class>
 
 
         </classes>
