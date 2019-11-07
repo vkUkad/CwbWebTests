@@ -85,12 +85,21 @@ public class CartPage extends BasePage {
     }
 
     @Step("Press 'Go to checkout button'")
-    public CheckoutLoginPage goToCheckout() {
+    public CheckoutLoginPage goToLoginCheckout() {
         cart.getBtnGoToCheckout().click();
         waitPageLoading();
         deleteImbox();
         return new CheckoutLoginPage();
     }
+
+    @Step("Press 'Go to checkout button'")
+    public CheckoutDeliveryPage goToCheckout() {
+        cart.getBtnGoToCheckout().click();
+        waitPageLoading();
+        deleteImbox();
+        return new CheckoutDeliveryPage();
+    }
+
 
     @Step("Verify 'Cart Price block'")
     public CartPage verifyCartPriceBlock() {

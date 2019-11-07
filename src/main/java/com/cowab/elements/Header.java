@@ -23,6 +23,8 @@ public class Header {
     private final SelenideElement labelCartCount;
     private final ElementsCollection listFoundProducts;
     private final ElementsCollection listCategory;
+    private final SelenideElement btnLoggedInUser;
+    private final SelenideElement btnMyPages;
 
     public Header() {
         btnLogin = $(".logged-link .login");
@@ -38,5 +40,7 @@ public class Header {
         labelCartCount = $(".cart span .cart-count");
         listFoundProducts = $$(".item");
         listCategory = $$(".content--hit > ul > li");
+        btnLoggedInUser = $("li.logged-link");
+        btnMyPages = $("div.account-modal__main-btn-holder");
     }
 }

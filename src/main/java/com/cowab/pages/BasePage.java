@@ -6,6 +6,8 @@ import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.conditions.Text;
 import com.cowab.elements.Header;
 import com.cowab.elements.LoginPopup;
+import com.cowab.elements.MyPages;
+import com.cowab.elements.ProductListing;
 import com.cowab.objects.User;
 import io.qameta.allure.Step;
 import org.openqa.selenium.JavascriptExecutor;
@@ -17,6 +19,7 @@ public class BasePage {
 
     Header header = new Header();
     LoginPopup loginPopup = new LoginPopup();
+    ProductListing productListing = new ProductListing();
 
     @Step("Open main page")
     public MainPage openMainPage(String URL) {
@@ -192,4 +195,18 @@ public class BasePage {
         return this;
     }
 
+    @Step("Open my pages")
+    public MyPagesPage openMyPages() {
+        header.getBtnLoggedInUser().click();
+        header.getBtnMyPages().click();
+        return new MyPagesPage();
+    }
+
+    @Step("Open first product from the page")
+    public ProductPage openFirstProductFromThePage() {
+        waitPageLoading();
+        productListing.getListProducts().first().hover();
+        productListing.getListProducts().first().click();
+        return new ProductPage();
+    }
 }

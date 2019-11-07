@@ -9,9 +9,7 @@ import com.cowab.utils.driver.MyDriverManager;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.awt.*;
@@ -33,7 +31,7 @@ public class Checkout extends TestConfiguration {
                 .openProductListingForQuery("bord")
                 .addTheFirstProductToTheCart()
                 .openCart()
-                .goToCheckout()
+                .goToLoginCheckout()
                 .registerCompanyUserCheckout(user)
                 .addNewDeliveryAddressCompany("TestCompany", "TestApi address 1", "12345", "TestCity")
                 .addPhoneNotification("+46712345671", "TestPhone")
@@ -58,7 +56,7 @@ public class Checkout extends TestConfiguration {
                 .openProductListingForQuery("bord")
                 .addTheFirstProductToTheCart()
                 .openCart()
-                .goToCheckout()
+                .goToLoginCheckout()
                 .registerPrivateUserCheckout(user)
                 .addNewDeliveryAddressPrivate("TestFirstName", "TestLastName", "TestApi address 1", "12345", "TestCity")
                 .addPhoneNotification("+46712345671", "TestPhone")
@@ -80,7 +78,7 @@ public class Checkout extends TestConfiguration {
                 .openProductListingForQuery("bord")
                 .addTheFirstProductToTheCart()
                 .openCart()
-                .goToCheckout()
+                .goToLoginCheckout()
                 .loginOnCheckout("vzotke@gmail.com", "q1w2e3r4T%")
 //                .loginOnCheckout("vlad.zotke@ajprodukter.se", "q1w2e3r4T%")
                 .verifyDeliveryPage();
@@ -94,13 +92,13 @@ public class Checkout extends TestConfiguration {
                 .openProductListingForQuery("bord")
                 .addTheFirstProductToTheCart()
                 .openCart()
-                .goToCheckout()
+                .goToLoginCheckout()
                 //  .loginOnCheckout("testcowabprivate@gmail.com", "q1w2e3r4T%")
                 .loginOnCheckout("vikentiy.kelevich@gmail.com", "Q!w2e3r4t5y6")
                 .verifyDeliveryPage();
     }
 
-    @Test(description = "Login on checkout with existing Private user")
+    @Test(description = "Login on checkout with existing Private user, full workflow")
     public void checkoutExistingPrivateFull() throws AWTException {
         WebDriverRunner.setWebDriver(createWebDriver(Thread.currentThread().getStackTrace()[1].getMethodName()));
         new BasePage().openMainPage(TESTING_URL_SE)
@@ -108,7 +106,7 @@ public class Checkout extends TestConfiguration {
                 .openProductListingForQuery("40046")
                 .addTheFirstProductToTheCart()
                 .openCart()
-                .goToCheckout()
+                .goToLoginCheckout()
                 .loginOnCheckout("vikentiy.kelevich@mailinator.com", "Q!w2e3r4t5y6")
                 .addNewDeliveryAddressPrivate("TestFirstName", "TestLastName", "TestApi address 1", "12345", "TestCity")
                 .addPhoneNotification("+46712345671", "TestPhone")
@@ -119,6 +117,36 @@ public class Checkout extends TestConfiguration {
                 .gotoDibsPage()
                 .confirmOrderWithMasterCard()
                 .verifyThankYouPage();
+    }
+
+    @Test(description = "Register new user and check 'newsletter subscription' functionality")
+    public void checkoutNewsletterSubscriptionFunctionality() throws AWTException {
+        User userSE = UserGenerator.generateUserSE();
+        WebDriverRunner.setWebDriver(createWebDriver(Thread.currentThread().getStackTrace()[1].getMethodName()));
+        new BasePage().openMainPage(TESTING_URL_SE)
+                .selectCompanyVisitorType()
+                .registerCompanyUser(userSE)
+                .verifyLoginName(userSE.getUserName())
+                .logout();
+
+        new BasePage().openMainPage(TESTING_URL_SE)
+                .login(userSE.getEmail(), userSE.getPassword())
+                .verifyLoginName(userSE.getUserName())
+                .openMyPages()
+                .verifyIfExpectedStateAppearsBeforeSubscription()
+                .openProductListingForQuery("matta")
+                .addTheFirstProductToTheCart()
+                .openCart()
+                .goToCheckout()
+                .addOrderLabel("TEST_PLEASE_IGNORE")
+                .gotoPaymentPage()
+                .selectInvoicePayment()
+                .gotoFinalizePage()
+                .checkPrivatePolicy(driver, true)
+                .checkNewsletterSubscriptionCheckbox()
+                .gotoThankYouPage()
+                .goToMyPages()
+                .checkIfExpectedStateAppearsAfterSubscription();
     }
 
     @AfterTest
