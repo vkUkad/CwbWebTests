@@ -18,6 +18,7 @@
         "CustomerNo",
         "ContactId",
         "PartyNumber",
+        "Party",
         "Name",
         "FirstName",
         "MiddleName",
@@ -27,6 +28,8 @@
         "PersonalTitle",
         "JobTitle",
         "Memo",
+        "Phone",
+        "MobilePhone",
         "Attributes",
         "Communications",
         "LastSales",
@@ -76,6 +79,15 @@
             "011261326"
           ],
           "pattern": "^(.*)$"
+        },
+        "Party": {
+          "$id": "#/properties/Contact/properties/Party",
+          "type": "integer",
+          "title": "The Party Schema",
+          "default": 0,
+          "examples": [
+            5643190632
+          ]
         },
         "Name": {
           "$id": "#/properties/Contact/properties/Name",
@@ -158,6 +170,25 @@
           "$id": "#/properties/Contact/properties/Memo",
           "type": "null",
           "title": "The Memo Schema",
+          "default": null,
+          "examples": [
+            null
+          ]
+        },
+        "Phone": {
+          "$id": "#/properties/Contact/properties/Phone",
+          "type": "string",
+          "title": "The Phone Schema",
+          "default": "",
+          "examples": [
+            "+4625558822"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "MobilePhone": {
+          "$id": "#/properties/Contact/properties/MobilePhone",
+          "type": "null",
+          "title": "The Mobilephone Schema",
           "default": null,
           "examples": [
             null
@@ -312,7 +343,7 @@
           "title": "The Syncronized Schema",
           "default": "",
           "examples": [
-            "2019-10-28T10:29:32.7707183Z"
+            "2019-10-28T10:25:53"
           ],
           "pattern": "^(.*)$"
         }
@@ -327,6 +358,14 @@
         "type": "object",
         "title": "The Items Schema",
         "required": [
+          "InvoiceMethod",
+          "EanCode",
+          "InvoiceEmail",
+          "PrimaryContactId",
+          "PurchaseOrderReference",
+          "PaymTermId",
+          "EInvoiceEANNumber",
+          "GanNo",
           "RecId",
           "PartyNumber",
           "Market",
@@ -336,24 +375,19 @@
           "LastName",
           "InstanceRelationType",
           "RelationType",
-          "PrimaryContactId",
-          "InvoiceEmail",
           "Email",
           "Phone",
           "Currency",
-          "InvoiceMethod",
           "OrgNumber",
           "VatNumber",
           "DunsNumber",
-          "EanCode",
           "Segment",
           "SubSegment",
           "SalesDistrict",
           "LineOfBusinessId",
           "DlvTerm",
-          "PaymMode",
           "DlvMode",
-          "PaymTermId",
+          "PaymMode",
           "ChargeGroup",
           "LineDisc",
           "PriceGroup",
@@ -366,8 +400,6 @@
           "ContactWorkerEmail",
           "Status",
           "ReasonCode",
-          "EInvoiceEANNumber",
-          "PurchaseOrderReference",
           "Blocked",
           "Memo",
           "Addresses",
@@ -378,6 +410,81 @@
           "Syncronized"
         ],
         "properties": {
+          "InvoiceMethod": {
+            "$id": "#/properties/Customers/items/properties/InvoiceMethod",
+            "type": "integer",
+            "title": "The Invoicemethod Schema",
+            "default": 0,
+            "examples": [
+              1
+            ]
+          },
+          "EanCode": {
+            "$id": "#/properties/Customers/items/properties/EanCode",
+            "type": "null",
+            "title": "The Eancode Schema",
+            "default": null,
+            "examples": [
+              null
+            ]
+          },
+          "InvoiceEmail": {
+            "$id": "#/properties/Customers/items/properties/InvoiceEmail",
+            "type": "string",
+            "title": "The Invoiceemail Schema",
+            "default": "",
+            "examples": [
+              ""
+            ],
+            "pattern": "^(.*)$"
+          },
+          "PrimaryContactId": {
+            "$id": "#/properties/Customers/items/properties/PrimaryContactId",
+            "type": "string",
+            "title": "The Primarycontactid Schema",
+            "default": "",
+            "examples": [
+              ""
+            ],
+            "pattern": "^(.*)$"
+          },
+          "PurchaseOrderReference": {
+            "$id": "#/properties/Customers/items/properties/PurchaseOrderReference",
+            "type": "null",
+            "title": "The Purchaseorderreference Schema",
+            "default": null,
+            "examples": [
+              null
+            ]
+          },
+          "PaymTermId": {
+            "$id": "#/properties/Customers/items/properties/PaymTermId",
+            "type": "string",
+            "title": "The Paymtermid Schema",
+            "default": "",
+            "examples": [
+              "20"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "EInvoiceEANNumber": {
+            "$id": "#/properties/Customers/items/properties/EInvoiceEANNumber",
+            "type": "null",
+            "title": "The Einvoiceeannumber Schema",
+            "default": null,
+            "examples": [
+              null
+            ]
+          },
+          "GanNo": {
+            "$id": "#/properties/Customers/items/properties/GanNo",
+            "type": "null",
+            "title": "The Ganno Schema",
+            "default": null,
+            "examples": [
+              null
+            ]
+          },
           "RecId": {
             "$id": "#/properties/Customers/items/properties/RecId",
             "type": "integer",
@@ -464,26 +571,6 @@
             ],
             "pattern": "^(.*)$"
           },
-          "PrimaryContactId": {
-            "$id": "#/properties/Customers/items/properties/PrimaryContactId",
-            "type": "string",
-            "title": "The Primarycontactid Schema",
-            "default": "",
-            "examples": [
-              ""
-            ],
-            "pattern": "^(.*)$"
-          },
-          "InvoiceEmail": {
-            "$id": "#/properties/Customers/items/properties/InvoiceEmail",
-            "type": "string",
-            "title": "The Invoiceemail Schema",
-            "default": "",
-            "examples": [
-              ""
-            ],
-            "pattern": "^(.*)$"
-          },
           "Email": {
             "$id": "#/properties/Customers/items/properties/Email",
             "type": "null",
@@ -512,15 +599,6 @@
             ],
             "pattern": "^(.*)$"
           },
-          "InvoiceMethod": {
-            "$id": "#/properties/Customers/items/properties/InvoiceMethod",
-            "type": "integer",
-            "title": "The Invoicemethod Schema",
-            "default": 0,
-            "examples": [
-              1
-            ]
-          },
           "OrgNumber": {
             "$id": "#/properties/Customers/items/properties/OrgNumber",
             "type": "string",
@@ -533,27 +611,17 @@
           },
           "VatNumber": {
             "$id": "#/properties/Customers/items/properties/VatNumber",
-            "type": "string",
-            "title": "The Vatnumber Schema",
-            "default": "",
-            "examples": [
-              "999-12345"
-            ],
-            "pattern": "^(.*)$"
-          },
-          "DunsNumber": {
-            "$id": "#/properties/Customers/items/properties/DunsNumber",
             "type": "null",
-            "title": "The Dunsnumber Schema",
+            "title": "The Vatnumber Schema",
             "default": null,
             "examples": [
               null
             ]
           },
-          "EanCode": {
-            "$id": "#/properties/Customers/items/properties/EanCode",
+          "DunsNumber": {
+            "$id": "#/properties/Customers/items/properties/DunsNumber",
             "type": "null",
-            "title": "The Eancode Schema",
+            "title": "The Dunsnumber Schema",
             "default": null,
             "examples": [
               null
@@ -606,15 +674,6 @@
             ],
             "pattern": "^(.*)$"
           },
-          "PaymMode": {
-            "$id": "#/properties/Customers/items/properties/PaymMode",
-            "type": "null",
-            "title": "The Paymmode Schema",
-            "default": null,
-            "examples": [
-              null
-            ]
-          },
           "DlvMode": {
             "$id": "#/properties/Customers/items/properties/DlvMode",
             "type": "string",
@@ -625,15 +684,14 @@
             ],
             "pattern": "^(.*)$"
           },
-          "PaymTermId": {
-            "$id": "#/properties/Customers/items/properties/PaymTermId",
-            "type": "string",
-            "title": "The Paymtermid Schema",
-            "default": "",
+          "PaymMode": {
+            "$id": "#/properties/Customers/items/properties/PaymMode",
+            "type": "null",
+            "title": "The Paymmode Schema",
+            "default": null,
             "examples": [
-              "20"
-            ],
-            "pattern": "^(.*)$"
+              null
+            ]
           },
           "ChargeGroup": {
             "$id": "#/properties/Customers/items/properties/ChargeGroup",
@@ -747,24 +805,6 @@
             ],
             "pattern": "^(.*)$"
           },
-          "EInvoiceEANNumber": {
-            "$id": "#/properties/Customers/items/properties/EInvoiceEANNumber",
-            "type": "null",
-            "title": "The Einvoiceeannumber Schema",
-            "default": null,
-            "examples": [
-              null
-            ]
-          },
-          "PurchaseOrderReference": {
-            "$id": "#/properties/Customers/items/properties/PurchaseOrderReference",
-            "type": "null",
-            "title": "The Purchaseorderreference Schema",
-            "default": null,
-            "examples": [
-              null
-            ]
-          },
           "Blocked": {
             "$id": "#/properties/Customers/items/properties/Blocked",
             "type": "integer",
@@ -805,6 +845,11 @@
                 "IsPrimary",
                 "IsDefault",
                 "RecId",
+                "MEPFinvoiceIsEInvoice",
+                "MEPFinvoiceEInvoiceType",
+                "MEPFinvoiceIntermediatorId",
+                "MEPFinvoiceReceiverId",
+                "MEPFinvoiceOVTCode",
                 "Modified",
                 "ModifiedBy"
               ],
@@ -935,6 +980,51 @@
                     5641769673
                   ]
                 },
+                "MEPFinvoiceIsEInvoice": {
+                  "$id": "#/properties/Customers/items/properties/Addresses/items/properties/MEPFinvoiceIsEInvoice",
+                  "type": "null",
+                  "title": "The Mepfinvoiceiseinvoice Schema",
+                  "default": null,
+                  "examples": [
+                    null
+                  ]
+                },
+                "MEPFinvoiceEInvoiceType": {
+                  "$id": "#/properties/Customers/items/properties/Addresses/items/properties/MEPFinvoiceEInvoiceType",
+                  "type": "null",
+                  "title": "The Mepfinvoiceeinvoicetype Schema",
+                  "default": null,
+                  "examples": [
+                    null
+                  ]
+                },
+                "MEPFinvoiceIntermediatorId": {
+                  "$id": "#/properties/Customers/items/properties/Addresses/items/properties/MEPFinvoiceIntermediatorId",
+                  "type": "null",
+                  "title": "The Mepfinvoiceintermediatorid Schema",
+                  "default": null,
+                  "examples": [
+                    null
+                  ]
+                },
+                "MEPFinvoiceReceiverId": {
+                  "$id": "#/properties/Customers/items/properties/Addresses/items/properties/MEPFinvoiceReceiverId",
+                  "type": "null",
+                  "title": "The Mepfinvoicereceiverid Schema",
+                  "default": null,
+                  "examples": [
+                    null
+                  ]
+                },
+                "MEPFinvoiceOVTCode": {
+                  "$id": "#/properties/Customers/items/properties/Addresses/items/properties/MEPFinvoiceOVTCode",
+                  "type": "null",
+                  "title": "The Mepfinvoiceovtcode Schema",
+                  "default": null,
+                  "examples": [
+                    null
+                  ]
+                },
                 "Modified": {
                   "$id": "#/properties/Customers/items/properties/Addresses/items/properties/Modified",
                   "type": "string",
@@ -960,8 +1050,12 @@
           },
           "Communications": {
             "$id": "#/properties/Customers/items/properties/Communications",
-            "type": "array",
-            "title": "The Communications Schema"
+            "type": "null",
+            "title": "The Communications Schema",
+            "default": null,
+            "examples": [
+              null
+            ]
           },
           "ModifiedBy": {
             "$id": "#/properties/Customers/items/properties/ModifiedBy",
@@ -999,7 +1093,7 @@
             "title": "The Syncronized Schema",
             "default": "",
             "examples": [
-              "2019-10-28T10:33:14.9160745Z"
+              "2019-10-28T10:29:24"
             ],
             "pattern": "^(.*)$"
           }

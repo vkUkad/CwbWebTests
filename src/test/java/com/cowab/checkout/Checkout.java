@@ -94,7 +94,7 @@ public class Checkout extends TestConfiguration {
                 .openCart()
                 .goToLoginCheckout()
                 //  .loginOnCheckout("testcowabprivate@gmail.com", "q1w2e3r4T%")
-                .loginOnCheckout("vikentiy.kelevich@gmail.com", "Q!w2e3r4t5y6")
+                .loginOnCheckout("autotestsepriv@mailinator.com", "Q!w2e3r4t5y6")
                 .verifyDeliveryPage();
     }
 
