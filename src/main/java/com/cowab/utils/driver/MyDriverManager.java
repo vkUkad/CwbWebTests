@@ -34,6 +34,8 @@ public class MyDriverManager {
             WebDriverManager.chromedriver().setup();
             WebDriver driver = new ChromeDriver();
             driver.manage().window().maximize();
+            System.out.println("Window size is: " + driver.manage().window().getSize().toString());
+            System.out.println();
             return driver;
         } else {
             return createRemoteDriver(testName);
