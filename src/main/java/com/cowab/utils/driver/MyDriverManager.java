@@ -35,7 +35,7 @@ public class MyDriverManager {
             WebDriverManager.chromedriver().setup();
             WebDriver driver = new ChromeDriver();
             Dimension dimension = new Dimension(1936,1096);
-            driver.manage().window().maximize();
+            driver.manage().window().setSize(dimension);
             System.out.println("Window size is: " + driver.manage().window().getSize().toString());
             System.out.println();
             return driver;
