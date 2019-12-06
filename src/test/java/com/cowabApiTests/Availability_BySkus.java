@@ -1,5 +1,7 @@
 package com.cowabApiTests;
 
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import io.restassured.RestAssured;
 import io.restassured.http.Method;
 import io.restassured.path.json.JsonPath;
@@ -17,6 +19,8 @@ import java.util.ArrayList;
 import static io.restassured.RestAssured.given;
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 
+@Feature("API test")
+@Story("API test")
 public class Availability_BySkus {
     /**
      * https://ajprodukter.portal.azure-api.net/docs/services/aj-produkter-middleware/operations/Availability_BySkus

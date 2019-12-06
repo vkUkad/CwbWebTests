@@ -16,25 +16,27 @@ import static com.cowab.utils.driver.MyDriverManager.createWebDriver;
 @Story("Login/Registration")
 public class Login extends TestConfiguration {
 
-    @Test(description = "TestApi login with a Company user")
+    @Test(description = "Test login with a Company user")
     public void loginCompany() {
         WebDriverRunner.setWebDriver(createWebDriver(Thread.currentThread().getStackTrace()[1].getMethodName()));
         new BasePage().openMainPage(TESTING_URL_SE)
                 .selectCompanyVisitorType()
-                .login("apitestsebus@mailinator.com", "Q!w2e3r4t5y6")
-                .verifyLoginName("Apitestname")
-                .logout();
-        //todo add check if user is logged out
+                .login("autotestsebus@mailinator.com", "Q!w2e3r4t5y6")
+                .verifyLoginName("Autotestname")
+                .logout()
+                .checkIfUserIsLoggedOut("Apitestname");
+
     }
 
-    @Test(description = "TestApi login with a Private user")
+    @Test(description = "Test login with a Private user")
     public void loginPrivate() {
         WebDriverRunner.setWebDriver(createWebDriver(Thread.currentThread().getStackTrace()[1].getMethodName()));
         new BasePage().openMainPage(TESTING_URL_SE)
                 .selectCompanyVisitorType()
-                .login("apitestsebus@mailinator.com", "Q!w2e3r4t5y6")
-                .verifyLoginName("Apitestname")
-                .logout();
+                .login("autotestsepriv@mailinator.com", "Q!w2e3r4t5y6")
+                .verifyLoginName("Testfirstname")
+                .logout()
+                .checkIfUserIsLoggedOut("Apitestname");
     }
 
     @Test(description = "Register a Company user")
@@ -45,7 +47,8 @@ public class Login extends TestConfiguration {
                 .selectCompanyVisitorType()
                 .registerCompanyUser(userSE)
                 .verifyLoginName(userSE.getUserName())
-                .logout();
+                .logout()
+                .checkIfUserIsLoggedOut(userSE.getUserName());
     }
 
     @Test(description = "Register a Private user")
@@ -56,6 +59,7 @@ public class Login extends TestConfiguration {
                 .selectCompanyVisitorType()
                 .registerPrivateUser(userSE)
                 .verifyLoginName(userSE.getUserName())
-                .logout();
+                .logout()
+                .checkIfUserIsLoggedOut(userSE.getUserName());
     }
 }

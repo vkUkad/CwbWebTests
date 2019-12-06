@@ -1,5 +1,7 @@
 package com.cowabApiTests;
 
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import io.restassured.RestAssured;
 import io.restassured.http.Method;
 import io.restassured.path.json.JsonPath;
@@ -19,6 +21,9 @@ import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInC
 /**
  * https://ajprodukter.portal.azure-api.net/docs/services/aj-produkter-middleware/operations/Contact_ByEmail
  */
+
+@Feature("API test")
+@Story("API test")
 public class Contact_ByEmail {
     @BeforeTest
     public void doPreconditions() {

@@ -42,7 +42,7 @@ public class Checkout extends TestConfiguration {
                 .addNewInvoiceAddress("TestCompany", "TestApi address 1", "12345", "TestCity")
                 .fillInvoiceNote("TestApi note")
                 .gotoFinalizePage()
-                .checkPrivatePolicy(driver)
+                .checkPrivatePolicy()
                 .gotoThankYouPage()
                 .verifyThankYouPage();
     }
@@ -63,7 +63,7 @@ public class Checkout extends TestConfiguration {
                 .addOrderLabel("TEST ORDER IGNORE IT")
                 .gotoPaymentPage()
                 .gotoFinalizePage()
-                .checkPrivatePolicy(driver)
+                .checkPrivatePolicy()
                 .gotoDibsPage()
                 .confirmOrderWithMasterCard()
                 .verifyThankYouPage()
@@ -113,7 +113,7 @@ public class Checkout extends TestConfiguration {
                 .addOrderLabel("TEST ORDER IGNORE IT")
                 .gotoPaymentPage()
                 .gotoFinalizePage()
-                .checkPrivatePolicy(driver)
+                .checkPrivatePolicy()
                 .gotoDibsPage()
                 .confirmOrderWithMasterCard()
                 .verifyThankYouPage();
@@ -142,7 +142,7 @@ public class Checkout extends TestConfiguration {
                 .gotoPaymentPage()
                 .selectInvoicePayment()
                 .gotoFinalizePage()
-                .checkPrivatePolicy(driver, true)
+                .checkPrivatePolicy()
                 .checkNewsletterSubscriptionCheckbox()
                 .gotoThankYouPage()
                 .goToMyPages()
@@ -154,4 +154,3 @@ public class Checkout extends TestConfiguration {
         driver.close();
     }
 }
-

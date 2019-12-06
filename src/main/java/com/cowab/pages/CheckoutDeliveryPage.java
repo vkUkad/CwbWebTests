@@ -10,6 +10,7 @@ public class CheckoutDeliveryPage extends CheckoutBasePage {
 
     @Step("Add new delivery address for Company")
     public CheckoutDeliveryPage addNewDeliveryAddressCompany(String companyName, String address, String postcode, String city) {
+        checkoutDelivery.getBtnAddNewDeliveryAddress().waitUntil(Condition.visible, 3000);
         checkoutDelivery.getBtnAddNewDeliveryAddress().click();
         checkoutDelivery.getFieldCompanyName().sendKeys(companyName);
         checkoutDelivery.getFieldCompanyAddress().sendKeys(address);
@@ -20,6 +21,7 @@ public class CheckoutDeliveryPage extends CheckoutBasePage {
 
     @Step("Add new delivery address for Private")
     public CheckoutDeliveryPage addNewDeliveryAddressPrivate(String firstName, String lastName, String address, String postcode, String city) {
+        checkoutDelivery.getBtnAddNewDeliveryAddress().waitUntil(Condition.visible, 3000);
         checkoutDelivery.getBtnAddNewDeliveryAddress().click();
         checkoutDelivery.getFieldUserFirstName().sendKeys(firstName);
         checkoutDelivery.getFieldUserLastName().sendKeys(lastName);
@@ -31,16 +33,20 @@ public class CheckoutDeliveryPage extends CheckoutBasePage {
 
     @Step("Add phone notification for number: {phone}")
     public CheckoutDeliveryPage addPhoneNotification(String phone, String name) {
-        checkoutDelivery.getCheckboxPhoneNotification().click();
-        waitPageLoading();
-        checkoutDelivery.getFieldPhoneNumber().sendKeys(phone);
-        checkoutDelivery.getFieldName().sendKeys(name);
+        if (!checkoutDelivery.getCheckboxPhoneNotificationFromBeforeLabel().is(Condition.checked)) {
+            checkoutDelivery.getCheckboxPhoneNotification().click();
+            waitPageLoading();
+            checkoutDelivery.getFieldPhoneNumber().sendKeys(phone);
+            checkoutDelivery.getFieldName().sendKeys(name);
+        }
         return this;
     }
 
     @Step("Add label: '{label}'")
     public CheckoutDeliveryPage addOrderLabel(String label) {
-        checkoutDelivery.getCheckboxOrderLabel().click();
+        if (!checkoutDelivery.getCheckboxOrderLabelFromBeforeLabel().is(Condition.checked)) {
+            checkoutDelivery.getCheckboxOrderLabel().click();
+        }
         waitPageLoading();
         checkoutDelivery.getFieldOrderLabel().sendKeys(label);
         return this;
@@ -55,7 +61,7 @@ public class CheckoutDeliveryPage extends CheckoutBasePage {
     }
 
     @Step("Verify that delivery block is displayed")
-    public CheckoutDeliveryPage verifyDeliveryPage(){
+    public CheckoutDeliveryPage verifyDeliveryPage() {
         checkoutDelivery.getBlockDelivery().shouldBe(Condition.visible);
         return this;
     }

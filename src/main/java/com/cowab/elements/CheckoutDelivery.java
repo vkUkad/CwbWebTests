@@ -18,9 +18,11 @@ public class CheckoutDelivery {
     private final SelenideElement fieldZipCode;
     private final SelenideElement fieldCity;
     private final SelenideElement checkboxPhoneNotification;
+    private final SelenideElement checkboxPhoneNotificationFromBeforeLabel;
     private final SelenideElement fieldPhoneNumber;
     private final SelenideElement fieldName;
     private final SelenideElement checkboxOrderLabel;
+    private final SelenideElement checkboxOrderLabelFromBeforeLabel;
     private final SelenideElement fieldOrderLabel;
     private final SelenideElement btnSubmit;
     private final SelenideElement blockDelivery;
@@ -36,9 +38,11 @@ public class CheckoutDelivery {
         fieldCity = $("#City");
         fieldZipCode = $("#ZipCode");
         checkboxPhoneNotification = $("label[for=\"telefonavisering\"]");
+        checkboxPhoneNotificationFromBeforeLabel = $("#telefonavisering");
         fieldPhoneNumber = $("#PhoneNumber");
         fieldName = $("#Name");
         checkboxOrderLabel = $("label[for=\"OrderLabelCheckBox\"]");
+        checkboxOrderLabelFromBeforeLabel = $("#OrderLabelCheckBox");
         fieldOrderLabel = $("#orderlabel");
         btnSubmit = $(".delivery__submit .btn");
         blockDelivery = $(".delivery");

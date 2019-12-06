@@ -34,10 +34,10 @@ public class MyDriverManager {
 //            System.setProperty("webdriver.chrome.driver", getCustomDriverPath());
             WebDriverManager.chromedriver().setup();
             WebDriver driver = new ChromeDriver();
-            Dimension dimension = new Dimension(1936,1096);
-            driver.manage().window().setSize(dimension);
-            System.out.println("Window size is: " + driver.manage().window().getSize().toString());
-            System.out.println();
+//            Dimension dimension = new Dimension(1936,1096);
+            driver.manage().window().maximize();
+//            System.out.println("Window size is: " + driver.manage().window().getSize().toString());
+//            System.out.println();
             return driver;
         } else {
             return createRemoteDriver(testName);

@@ -55,6 +55,7 @@ public class CheckoutLoginPage extends CheckoutBasePage {
         checkoutRegistration.getFieldCity().sendKeys(user.getCity());
         //checkoutRegistration.getFieldPhone().sendKeys(user.getPhone());
         checkoutRegistration.getCheckboxSecurityPolicy().click();
+        waitPageLoading();
         checkoutRegistration.getBtnContinueRegistration().click();
         waitPageLoading();
         return new CheckoutDeliveryPage();

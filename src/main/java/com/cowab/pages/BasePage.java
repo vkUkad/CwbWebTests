@@ -3,6 +3,7 @@ package com.cowab.pages;
 import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
+import com.codeborne.selenide.SelenideElement;
 import com.codeborne.selenide.conditions.Text;
 import com.cowab.elements.Header;
 import com.cowab.elements.LoginPopup;
@@ -11,6 +12,9 @@ import com.cowab.elements.ProductListing;
 import com.cowab.objects.User;
 import io.qameta.allure.Step;
 import org.openqa.selenium.JavascriptExecutor;
+
+import java.awt.*;
+import java.awt.event.KeyEvent;
 
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
@@ -171,7 +175,6 @@ public class BasePage {
                 .replaceAll(",-", ""));
     }
 
-
     @Step("Scroll to top of page")
     public BasePage scrollToTop() {
         ((JavascriptExecutor) getWebDriver())
@@ -208,5 +211,22 @@ public class BasePage {
         productListing.getListProducts().first().hover();
         productListing.getListProducts().first().click();
         return new ProductPage();
+    }
+
+    @Step("Check if user is logged out")
+    public void checkIfUserIsLoggedOut(String userName) {
+        header.getBtnLogin().shouldNotHave(Condition.text(userName));
+        waitPageLoading();
+    }
+
+    @Step("Click on the element: \"{name}\" by mouse over")
+    public void clickOnTheElementByMouseOver(SelenideElement element) throws AWTException {
+        String name = element.getTagName();
+        int x = element.getLocation().getX() + 15;
+        int y = element.getLocation().getY() + 92;
+        Robot bot = new Robot();
+        bot.mouseMove(x, y);
+        bot.mousePress(KeyEvent.BUTTON1_MASK);
+        bot.mouseRelease(KeyEvent.BUTTON1_MASK);
     }
 }
