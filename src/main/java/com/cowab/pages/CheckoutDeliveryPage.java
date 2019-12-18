@@ -6,11 +6,11 @@ import io.qameta.allure.Step;
 
 public class CheckoutDeliveryPage extends CheckoutBasePage {
 
-    CheckoutDelivery checkoutDelivery = new CheckoutDelivery();
+    private CheckoutDelivery checkoutDelivery = new CheckoutDelivery();
 
     @Step("Add new delivery address for Company")
     public CheckoutDeliveryPage addNewDeliveryAddressCompany(String companyName, String address, String postcode, String city) {
-        checkoutDelivery.getBtnAddNewDeliveryAddress().waitUntil(Condition.visible, 3000);
+        checkoutDelivery.getBtnAddNewDeliveryAddress().waitUntil(Condition.visible, 6000);
         checkoutDelivery.getBtnAddNewDeliveryAddress().click();
         checkoutDelivery.getFieldCompanyName().sendKeys(companyName);
         checkoutDelivery.getFieldCompanyAddress().sendKeys(address);

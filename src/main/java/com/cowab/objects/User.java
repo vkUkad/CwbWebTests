@@ -15,7 +15,9 @@ public class User {
             address,
             postCode,
             city,
-            phone;
+            phone,
+            emailReceiverAddress,
+            emailReceiverPassword;
 
     public User(String email, String password, String organisationNumber, String companyName, String userName, String userLastName, String userMobile,
                 String address, String postCode, String city, String phone) {
@@ -33,7 +35,7 @@ public class User {
     }
 
     public User(String organisationNumber, String userMobile,
-                String address, String postCode, String city, String phone) {
+                String address, String postCode, String city, String phone, String emailRecieverAddress, String emailReceiverEmailPassword) {
         this.email = "test" + System.currentTimeMillis() + "@test.tt";
         this.password = "q1w2e3r4T";
         this.organisationNumber = organisationNumber;
@@ -45,5 +47,7 @@ public class User {
         this.postCode = postCode;
         this.city = city;
         this.phone = phone;
+        this.emailReceiverAddress = emailRecieverAddress;
+        this.emailReceiverPassword = emailReceiverEmailPassword;
     }
 }

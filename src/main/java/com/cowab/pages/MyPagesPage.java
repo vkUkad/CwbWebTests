@@ -3,6 +3,7 @@ package com.cowab.pages;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.WebDriverRunner;
 import com.cowab.elements.MyPages;
+import com.cowab.objects.User;
 import io.qameta.allure.Step;
 import io.restassured.RestAssured;
 import io.restassured.http.Method;
@@ -12,7 +13,7 @@ import io.restassured.specification.RequestSpecification;
 import org.testng.Assert;
 
 public class MyPagesPage extends BasePage {
-    MyPages myPages = new MyPages();
+    private MyPages myPages = new MyPages();
 
     @Step("Check if valid newsletter state appears after update")
     public void checkIfExpectedStateAppearsAfterSubscription() {
@@ -46,6 +47,16 @@ public class MyPagesPage extends BasePage {
                 "\n" +
                 "De senaste nyheterna\n" +
                 "Andra erbjudanden!"));
+        return this;
+    }
+
+    public MyPagesPage clickOnShareButton() {
+        myPages.getBtnShare().click();
+        return this;
+    }
+
+    public MyPagesPage typeRecieverEmail(User user) {
+        myPages.getInputRecieverEmailAddress().sendKeys(user.getEmailReceiverAddress());
         return this;
     }
 }

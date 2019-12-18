@@ -75,6 +75,4 @@ public class Cart extends TestConfiguration {
                 .openCart()
                 .verifyCartPriceBlock();
     }
-
-
 }

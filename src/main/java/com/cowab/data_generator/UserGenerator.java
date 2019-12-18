@@ -13,7 +13,9 @@ public class UserGenerator {
                 "Test Adddress",
                 "41669",
                 "Göteborg",
-                "+46712345672");
+                "+46712345672",
+                "vikentiy.kelevich@gmail.com",
+                "manythanks4thisday");
     }
 
     public static User generateUserNO() {
@@ -23,7 +25,9 @@ public class UserGenerator {
                 "Test Adddress",
                 "41669",
                 "Göteborg",
-                "+46712345672");
+                "+46712345672",
+                "vikentiy.kelevich@gmail.com",
+                "manythanks4thisday");
     }
 
 

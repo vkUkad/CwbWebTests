@@ -31,6 +31,8 @@ public class Wishlist {
                 .clickSaveButton()
                 .openMyPages()
                 .switchTabToShoppingLists()
+                .clickOnShareButton()
+                .typeRecieverEmail(userSE)
 
         ;
     }
