@@ -1,0 +1,3 @@
+[submodule "cowab-ict"]
+	path = cowab-ict
+	url = https://kwch@bitbucket.org/kwch/cowab-ict.git
