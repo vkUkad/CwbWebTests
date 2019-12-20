@@ -1,0 +1,1104 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "title": "The Root Schema",
+  "required": [
+    "Contact",
+    "Customers"
+  ],
+  "properties": {
+    "Contact": {
+      "$id": "#/properties/Contact",
+      "type": "object",
+      "title": "The Contact Schema",
+      "required": [
+        "Market",
+        "CustomerNo",
+        "ContactId",
+        "PartyNumber",
+        "Party",
+        "Name",
+        "FirstName",
+        "MiddleName",
+        "LastName",
+        "Email",
+        "PersonalTitleId",
+        "PersonalTitle",
+        "JobTitle",
+        "Memo",
+        "Phone",
+        "MobilePhone",
+        "Attributes",
+        "Communications",
+        "LastSales",
+        "Active",
+        "ModifiedBy",
+        "Created",
+        "Modified",
+        "Syncronized"
+      ],
+      "properties": {
+        "Market": {
+          "$id": "#/properties/Contact/properties/Market",
+          "type": "string",
+          "title": "The Market Schema",
+          "default": "",
+          "examples": [
+            "cse"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "CustomerNo": {
+          "$id": "#/properties/Contact/properties/CustomerNo",
+          "type": "string",
+          "title": "The Customerno Schema",
+          "default": "",
+          "examples": [
+            "49003"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "ContactId": {
+          "$id": "#/properties/Contact/properties/ContactId",
+          "type": "string",
+          "title": "The Contactid Schema",
+          "default": "",
+          "examples": [
+            "cse-181710"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "PartyNumber": {
+          "$id": "#/properties/Contact/properties/PartyNumber",
+          "type": "string",
+          "title": "The Partynumber Schema",
+          "default": "",
+          "examples": [
+            "011261326"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "Party": {
+          "$id": "#/properties/Contact/properties/Party",
+          "type": "integer",
+          "title": "The Party Schema",
+          "default": 0,
+          "examples": [
+            5643190632
+          ]
+        },
+        "Name": {
+          "$id": "#/properties/Contact/properties/Name",
+          "type": "string",
+          "title": "The Name Schema",
+          "default": "",
+          "examples": [
+            "Apitestname Apitestlastname"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "FirstName": {
+          "$id": "#/properties/Contact/properties/FirstName",
+          "type": "string",
+          "title": "The Firstname Schema",
+          "default": "",
+          "examples": [
+            "Apitestname"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "MiddleName": {
+          "$id": "#/properties/Contact/properties/MiddleName",
+          "type": "null",
+          "title": "The Middlename Schema",
+          "default": null,
+          "examples": [
+            null
+          ]
+        },
+        "LastName": {
+          "$id": "#/properties/Contact/properties/LastName",
+          "type": "string",
+          "title": "The Lastname Schema",
+          "default": "",
+          "examples": [
+            "Apitestlastname"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "Email": {
+          "$id": "#/properties/Contact/properties/Email",
+          "type": "string",
+          "title": "The Email Schema",
+          "default": "",
+          "examples": [
+            "apitestsebus@mailinator.com"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "PersonalTitleId": {
+          "$id": "#/properties/Contact/properties/PersonalTitleId",
+          "type": "string",
+          "title": "The Personaltitleid Schema",
+          "default": "",
+          "examples": [
+            "0"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "PersonalTitle": {
+          "$id": "#/properties/Contact/properties/PersonalTitle",
+          "type": "null",
+          "title": "The Personaltitle Schema",
+          "default": null,
+          "examples": [
+            null
+          ]
+        },
+        "JobTitle": {
+          "$id": "#/properties/Contact/properties/JobTitle",
+          "type": "null",
+          "title": "The Jobtitle Schema",
+          "default": null,
+          "examples": [
+            null
+          ]
+        },
+        "Memo": {
+          "$id": "#/properties/Contact/properties/Memo",
+          "type": "null",
+          "title": "The Memo Schema",
+          "default": null,
+          "examples": [
+            null
+          ]
+        },
+        "Phone": {
+          "$id": "#/properties/Contact/properties/Phone",
+          "type": "string",
+          "title": "The Phone Schema",
+          "default": "",
+          "examples": [
+            "+4625558822"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "MobilePhone": {
+          "$id": "#/properties/Contact/properties/MobilePhone",
+          "type": "null",
+          "title": "The Mobilephone Schema",
+          "default": null,
+          "examples": [
+            null
+          ]
+        },
+        "Attributes": {
+          "$id": "#/properties/Contact/properties/Attributes",
+          "type": "object",
+          "title": "The Attributes Schema",
+          "required": [
+            "newsletter",
+            "ebook",
+            "catalogue",
+            "gdpr"
+          ],
+          "properties": {
+            "newsletter": {
+              "$id": "#/properties/Contact/properties/Attributes/properties/newsletter",
+              "type": "integer",
+              "title": "The Newsletter Schema",
+              "default": 0,
+              "examples": [
+                1
+              ]
+            },
+            "ebook": {
+              "$id": "#/properties/Contact/properties/Attributes/properties/ebook",
+              "type": "integer",
+              "title": "The Ebook Schema",
+              "default": 0,
+              "examples": [
+                0
+              ]
+            },
+            "catalogue": {
+              "$id": "#/properties/Contact/properties/Attributes/properties/catalogue",
+              "type": "integer",
+              "title": "The Catalogue Schema",
+              "default": 0,
+              "examples": [
+                1
+              ]
+            },
+            "gdpr": {
+              "$id": "#/properties/Contact/properties/Attributes/properties/gdpr",
+              "type": "integer",
+              "title": "The Gdpr Schema",
+              "default": 0,
+              "examples": [
+                1
+              ]
+            }
+          }
+        },
+        "Communications": {
+          "$id": "#/properties/Contact/properties/Communications",
+          "type": "array",
+          "title": "The Communications Schema",
+          "items": {
+            "$id": "#/properties/Contact/properties/Communications/items",
+            "type": "object",
+            "title": "The Items Schema",
+            "required": [
+              "Value",
+              "Type",
+              "IsPrimary"
+            ],
+            "properties": {
+              "Value": {
+                "$id": "#/properties/Contact/properties/Communications/items/properties/Value",
+                "type": "string",
+                "title": "The Value Schema",
+                "default": "",
+                "examples": [
+                  "+4625558822"
+                ],
+                "pattern": "^(.*)$"
+              },
+              "Type": {
+                "$id": "#/properties/Contact/properties/Communications/items/properties/Type",
+                "type": "string",
+                "title": "The Type Schema",
+                "default": "",
+                "examples": [
+                  "phone"
+                ],
+                "pattern": "^(.*)$"
+              },
+              "IsPrimary": {
+                "$id": "#/properties/Contact/properties/Communications/items/properties/IsPrimary",
+                "type": "boolean",
+                "title": "The Isprimary Schema",
+                "default": false,
+                "examples": [
+                  true
+                ]
+              }
+            }
+          }
+        },
+        "LastSales": {
+          "$id": "#/properties/Contact/properties/LastSales",
+          "type": "null",
+          "title": "The Lastsales Schema",
+          "default": null,
+          "examples": [
+            null
+          ]
+        },
+        "Active": {
+          "$id": "#/properties/Contact/properties/Active",
+          "type": "boolean",
+          "title": "The Active Schema",
+          "default": false,
+          "examples": [
+            true
+          ]
+        },
+        "ModifiedBy": {
+          "$id": "#/properties/Contact/properties/ModifiedBy",
+          "type": "string",
+          "title": "The Modifiedby Schema",
+          "default": "",
+          "examples": [
+            "dax_aos3"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "Created": {
+          "$id": "#/properties/Contact/properties/Created",
+          "type": "string",
+          "title": "The Created Schema",
+          "default": "",
+          "examples": [
+            "2019-10-07T11:44:02Z"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "Modified": {
+          "$id": "#/properties/Contact/properties/Modified",
+          "type": "string",
+          "title": "The Modified Schema",
+          "default": "",
+          "examples": [
+            "2019-10-28T10:25:53Z"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "Syncronized": {
+          "$id": "#/properties/Contact/properties/Syncronized",
+          "type": "string",
+          "title": "The Syncronized Schema",
+          "default": "",
+          "examples": [
+            "2019-10-28T10:25:53"
+          ],
+          "pattern": "^(.*)$"
+        }
+      }
+    },
+    "Customers": {
+      "$id": "#/properties/Customers",
+      "type": "array",
+      "title": "The Customers Schema",
+      "items": {
+        "$id": "#/properties/Customers/items",
+        "type": "object",
+        "title": "The Items Schema",
+        "required": [
+          "InvoiceMethod",
+          "EanCode",
+          "InvoiceEmail",
+          "PrimaryContactId",
+          "PurchaseOrderReference",
+          "PaymTermId",
+          "EInvoiceEANNumber",
+          "GanNo",
+          "RecId",
+          "PartyNumber",
+          "Market",
+          "CustomerNo",
+          "Name",
+          "FirstName",
+          "LastName",
+          "InstanceRelationType",
+          "RelationType",
+          "Email",
+          "Phone",
+          "Currency",
+          "OrgNumber",
+          "VatNumber",
+          "DunsNumber",
+          "Segment",
+          "SubSegment",
+          "SalesDistrict",
+          "LineOfBusinessId",
+          "DlvTerm",
+          "DlvMode",
+          "PaymMode",
+          "ChargeGroup",
+          "LineDisc",
+          "PriceGroup",
+          "CustomerGroup",
+          "ChainId",
+          "LastSales",
+          "AccountType",
+          "Telemarketing",
+          "NumberOfEmployees",
+          "ContactWorkerEmail",
+          "Status",
+          "ReasonCode",
+          "Blocked",
+          "Memo",
+          "Addresses",
+          "Communications",
+          "ModifiedBy",
+          "Created",
+          "Modified",
+          "Syncronized"
+        ],
+        "properties": {
+          "InvoiceMethod": {
+            "$id": "#/properties/Customers/items/properties/InvoiceMethod",
+            "type": "integer",
+            "title": "The Invoicemethod Schema",
+            "default": 0,
+            "examples": [
+              1
+            ]
+          },
+          "EanCode": {
+            "$id": "#/properties/Customers/items/properties/EanCode",
+            "type": "null",
+            "title": "The Eancode Schema",
+            "default": null,
+            "examples": [
+              null
+            ]
+          },
+          "InvoiceEmail": {
+            "$id": "#/properties/Customers/items/properties/InvoiceEmail",
+            "type": "string",
+            "title": "The Invoiceemail Schema",
+            "default": "",
+            "examples": [
+              ""
+            ],
+            "pattern": "^(.*)$"
+          },
+          "PrimaryContactId": {
+            "$id": "#/properties/Customers/items/properties/PrimaryContactId",
+            "type": "string",
+            "title": "The Primarycontactid Schema",
+            "default": "",
+            "examples": [
+              ""
+            ],
+            "pattern": "^(.*)$"
+          },
+          "PurchaseOrderReference": {
+            "$id": "#/properties/Customers/items/properties/PurchaseOrderReference",
+            "type": "null",
+            "title": "The Purchaseorderreference Schema",
+            "default": null,
+            "examples": [
+              null
+            ]
+          },
+          "PaymTermId": {
+            "$id": "#/properties/Customers/items/properties/PaymTermId",
+            "type": "string",
+            "title": "The Paymtermid Schema",
+            "default": "",
+            "examples": [
+              "20"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "EInvoiceEANNumber": {
+            "$id": "#/properties/Customers/items/properties/EInvoiceEANNumber",
+            "type": "null",
+            "title": "The Einvoiceeannumber Schema",
+            "default": null,
+            "examples": [
+              null
+            ]
+          },
+          "GanNo": {
+            "$id": "#/properties/Customers/items/properties/GanNo",
+            "type": "null",
+            "title": "The Ganno Schema",
+            "default": null,
+            "examples": [
+              null
+            ]
+          },
+          "RecId": {
+            "$id": "#/properties/Customers/items/properties/RecId",
+            "type": "integer",
+            "title": "The Recid Schema",
+            "default": 0,
+            "examples": [
+              5638192622
+            ]
+          },
+          "PartyNumber": {
+            "$id": "#/properties/Customers/items/properties/PartyNumber",
+            "type": "string",
+            "title": "The Partynumber Schema",
+            "default": "",
+            "examples": [
+              "011261325"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "Market": {
+            "$id": "#/properties/Customers/items/properties/Market",
+            "type": "string",
+            "title": "The Market Schema",
+            "default": "",
+            "examples": [
+              "cse"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "CustomerNo": {
+            "$id": "#/properties/Customers/items/properties/CustomerNo",
+            "type": "string",
+            "title": "The Customerno Schema",
+            "default": "",
+            "examples": [
+              "49003"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "Name": {
+            "$id": "#/properties/Customers/items/properties/Name",
+            "type": "string",
+            "title": "The Name Schema",
+            "default": "",
+            "examples": [
+              "Apitestcompanyname"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "FirstName": {
+            "$id": "#/properties/Customers/items/properties/FirstName",
+            "type": "null",
+            "title": "The Firstname Schema",
+            "default": null,
+            "examples": [
+              null
+            ]
+          },
+          "LastName": {
+            "$id": "#/properties/Customers/items/properties/LastName",
+            "type": "null",
+            "title": "The Lastname Schema",
+            "default": null,
+            "examples": [
+              null
+            ]
+          },
+          "InstanceRelationType": {
+            "$id": "#/properties/Customers/items/properties/InstanceRelationType",
+            "type": "integer",
+            "title": "The Instancerelationtype Schema",
+            "default": 0,
+            "examples": [
+              2978
+            ]
+          },
+          "RelationType": {
+            "$id": "#/properties/Customers/items/properties/RelationType",
+            "type": "string",
+            "title": "The Relationtype Schema",
+            "default": "",
+            "examples": [
+              "Customer"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "Email": {
+            "$id": "#/properties/Customers/items/properties/Email",
+            "type": "null",
+            "title": "The Email Schema",
+            "default": null,
+            "examples": [
+              null
+            ]
+          },
+          "Phone": {
+            "$id": "#/properties/Customers/items/properties/Phone",
+            "type": "null",
+            "title": "The Phone Schema",
+            "default": null,
+            "examples": [
+              null
+            ]
+          },
+          "Currency": {
+            "$id": "#/properties/Customers/items/properties/Currency",
+            "type": "string",
+            "title": "The Currency Schema",
+            "default": "",
+            "examples": [
+              "SEK"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "OrgNumber": {
+            "$id": "#/properties/Customers/items/properties/OrgNumber",
+            "type": "string",
+            "title": "The Orgnumber Schema",
+            "default": "",
+            "examples": [
+              "123123-3219"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "VatNumber": {
+            "$id": "#/properties/Customers/items/properties/VatNumber",
+            "type": "null",
+            "title": "The Vatnumber Schema",
+            "default": null,
+            "examples": [
+              null
+            ]
+          },
+          "DunsNumber": {
+            "$id": "#/properties/Customers/items/properties/DunsNumber",
+            "type": "null",
+            "title": "The Dunsnumber Schema",
+            "default": null,
+            "examples": [
+              null
+            ]
+          },
+          "Segment": {
+            "$id": "#/properties/Customers/items/properties/Segment",
+            "type": "string",
+            "title": "The Segment Schema",
+            "default": "",
+            "examples": [
+              "00"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "SubSegment": {
+            "$id": "#/properties/Customers/items/properties/SubSegment",
+            "type": "null",
+            "title": "The Subsegment Schema",
+            "default": null,
+            "examples": [
+              null
+            ]
+          },
+          "SalesDistrict": {
+            "$id": "#/properties/Customers/items/properties/SalesDistrict",
+            "type": "null",
+            "title": "The Salesdistrict Schema",
+            "default": null,
+            "examples": [
+              null
+            ]
+          },
+          "LineOfBusinessId": {
+            "$id": "#/properties/Customers/items/properties/LineOfBusinessId",
+            "type": "null",
+            "title": "The Lineofbusinessid Schema",
+            "default": null,
+            "examples": [
+              null
+            ]
+          },
+          "DlvTerm": {
+            "$id": "#/properties/Customers/items/properties/DlvTerm",
+            "type": "string",
+            "title": "The Dlvterm Schema",
+            "default": "",
+            "examples": [
+              "DAP"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "DlvMode": {
+            "$id": "#/properties/Customers/items/properties/DlvMode",
+            "type": "string",
+            "title": "The Dlvmode Schema",
+            "default": "",
+            "examples": [
+              "CSE01"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "PaymMode": {
+            "$id": "#/properties/Customers/items/properties/PaymMode",
+            "type": "null",
+            "title": "The Paymmode Schema",
+            "default": null,
+            "examples": [
+              null
+            ]
+          },
+          "ChargeGroup": {
+            "$id": "#/properties/Customers/items/properties/ChargeGroup",
+            "type": "null",
+            "title": "The Chargegroup Schema",
+            "default": null,
+            "examples": [
+              null
+            ]
+          },
+          "LineDisc": {
+            "$id": "#/properties/Customers/items/properties/LineDisc",
+            "type": "null",
+            "title": "The Linedisc Schema",
+            "default": null,
+            "examples": [
+              null
+            ]
+          },
+          "PriceGroup": {
+            "$id": "#/properties/Customers/items/properties/PriceGroup",
+            "type": "null",
+            "title": "The Pricegroup Schema",
+            "default": null,
+            "examples": [
+              null
+            ]
+          },
+          "CustomerGroup": {
+            "$id": "#/properties/Customers/items/properties/CustomerGroup",
+            "type": "string",
+            "title": "The Customergroup Schema",
+            "default": "",
+            "examples": [
+              "ExtSE"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "ChainId": {
+            "$id": "#/properties/Customers/items/properties/ChainId",
+            "type": "null",
+            "title": "The Chainid Schema",
+            "default": null,
+            "examples": [
+              null
+            ]
+          },
+          "LastSales": {
+            "$id": "#/properties/Customers/items/properties/LastSales",
+            "type": "null",
+            "title": "The Lastsales Schema",
+            "default": null,
+            "examples": [
+              null
+            ]
+          },
+          "AccountType": {
+            "$id": "#/properties/Customers/items/properties/AccountType",
+            "type": "string",
+            "title": "The Accounttype Schema",
+            "default": "",
+            "examples": [
+              "ACT01"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "Telemarketing": {
+            "$id": "#/properties/Customers/items/properties/Telemarketing",
+            "type": "null",
+            "title": "The Telemarketing Schema",
+            "default": null,
+            "examples": [
+              null
+            ]
+          },
+          "NumberOfEmployees": {
+            "$id": "#/properties/Customers/items/properties/NumberOfEmployees",
+            "type": "integer",
+            "title": "The Numberofemployees Schema",
+            "default": 0,
+            "examples": [
+              0
+            ]
+          },
+          "ContactWorkerEmail": {
+            "$id": "#/properties/Customers/items/properties/ContactWorkerEmail",
+            "type": "null",
+            "title": "The Contactworkeremail Schema",
+            "default": null,
+            "examples": [
+              null
+            ]
+          },
+          "Status": {
+            "$id": "#/properties/Customers/items/properties/Status",
+            "type": "string",
+            "title": "The Status Schema",
+            "default": "",
+            "examples": [
+              "SC00"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "ReasonCode": {
+            "$id": "#/properties/Customers/items/properties/ReasonCode",
+            "type": "string",
+            "title": "The Reasoncode Schema",
+            "default": "",
+            "examples": [
+              "1"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "Blocked": {
+            "$id": "#/properties/Customers/items/properties/Blocked",
+            "type": "integer",
+            "title": "The Blocked Schema",
+            "default": 0,
+            "examples": [
+              0
+            ]
+          },
+          "Memo": {
+            "$id": "#/properties/Customers/items/properties/Memo",
+            "type": "null",
+            "title": "The Memo Schema",
+            "default": null,
+            "examples": [
+              null
+            ]
+          },
+          "Addresses": {
+            "$id": "#/properties/Customers/items/properties/Addresses",
+            "type": "array",
+            "title": "The Addresses Schema",
+            "items": {
+              "$id": "#/properties/Customers/items/properties/Addresses/items",
+              "type": "object",
+              "title": "The Items Schema",
+              "required": [
+                "Market",
+                "CustomerNo",
+                "AddressType",
+                "Name",
+                "Street",
+                "ZipCode",
+                "City",
+                "County",
+                "CountryRegionId",
+                "State",
+                "IsPrimary",
+                "IsDefault",
+                "RecId",
+                "MEPFinvoiceIsEInvoice",
+                "MEPFinvoiceEInvoiceType",
+                "MEPFinvoiceIntermediatorId",
+                "MEPFinvoiceReceiverId",
+                "MEPFinvoiceOVTCode",
+                "Modified",
+                "ModifiedBy"
+              ],
+              "properties": {
+                "Market": {
+                  "$id": "#/properties/Customers/items/properties/Addresses/items/properties/Market",
+                  "type": "string",
+                  "title": "The Market Schema",
+                  "default": "",
+                  "examples": [
+                    "cse"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "CustomerNo": {
+                  "$id": "#/properties/Customers/items/properties/Addresses/items/properties/CustomerNo",
+                  "type": "string",
+                  "title": "The Customerno Schema",
+                  "default": "",
+                  "examples": [
+                    "49003"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "AddressType": {
+                  "$id": "#/properties/Customers/items/properties/Addresses/items/properties/AddressType",
+                  "type": "integer",
+                  "title": "The Addresstype Schema",
+                  "default": 0,
+                  "examples": [
+                    9
+                  ]
+                },
+                "Name": {
+                  "$id": "#/properties/Customers/items/properties/Addresses/items/properties/Name",
+                  "type": "string",
+                  "title": "The Name Schema",
+                  "default": "",
+                  "examples": [
+                    "Apitestcompanyname"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "Street": {
+                  "$id": "#/properties/Customers/items/properties/Addresses/items/properties/Street",
+                  "type": "string",
+                  "title": "The Street Schema",
+                  "default": "",
+                  "examples": [
+                    "Apiteststreetname 30/1"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "ZipCode": {
+                  "$id": "#/properties/Customers/items/properties/Addresses/items/properties/ZipCode",
+                  "type": "string",
+                  "title": "The Zipcode Schema",
+                  "default": "",
+                  "examples": [
+                    "610 01"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "City": {
+                  "$id": "#/properties/Customers/items/properties/Addresses/items/properties/City",
+                  "type": "string",
+                  "title": "The City Schema",
+                  "default": "",
+                  "examples": [
+                    "Apitestcity"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "County": {
+                  "$id": "#/properties/Customers/items/properties/Addresses/items/properties/County",
+                  "type": "string",
+                  "title": "The County Schema",
+                  "default": "",
+                  "examples": [
+                    ""
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "CountryRegionId": {
+                  "$id": "#/properties/Customers/items/properties/Addresses/items/properties/CountryRegionId",
+                  "type": "string",
+                  "title": "The Countryregionid Schema",
+                  "default": "",
+                  "examples": [
+                    "SWE"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "State": {
+                  "$id": "#/properties/Customers/items/properties/Addresses/items/properties/State",
+                  "type": "string",
+                  "title": "The State Schema",
+                  "default": "",
+                  "examples": [
+                    ""
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "IsPrimary": {
+                  "$id": "#/properties/Customers/items/properties/Addresses/items/properties/IsPrimary",
+                  "type": "boolean",
+                  "title": "The Isprimary Schema",
+                  "default": false,
+                  "examples": [
+                    true
+                  ]
+                },
+                "IsDefault": {
+                  "$id": "#/properties/Customers/items/properties/Addresses/items/properties/IsDefault",
+                  "type": "boolean",
+                  "title": "The Isdefault Schema",
+                  "default": false,
+                  "examples": [
+                    true
+                  ]
+                },
+                "RecId": {
+                  "$id": "#/properties/Customers/items/properties/Addresses/items/properties/RecId",
+                  "type": "integer",
+                  "title": "The Recid Schema",
+                  "default": 0,
+                  "examples": [
+                    5641769673
+                  ]
+                },
+                "MEPFinvoiceIsEInvoice": {
+                  "$id": "#/properties/Customers/items/properties/Addresses/items/properties/MEPFinvoiceIsEInvoice",
+                  "type": "null",
+                  "title": "The Mepfinvoiceiseinvoice Schema",
+                  "default": null,
+                  "examples": [
+                    null
+                  ]
+                },
+                "MEPFinvoiceEInvoiceType": {
+                  "$id": "#/properties/Customers/items/properties/Addresses/items/properties/MEPFinvoiceEInvoiceType",
+                  "type": "null",
+                  "title": "The Mepfinvoiceeinvoicetype Schema",
+                  "default": null,
+                  "examples": [
+                    null
+                  ]
+                },
+                "MEPFinvoiceIntermediatorId": {
+                  "$id": "#/properties/Customers/items/properties/Addresses/items/properties/MEPFinvoiceIntermediatorId",
+                  "type": "null",
+                  "title": "The Mepfinvoiceintermediatorid Schema",
+                  "default": null,
+                  "examples": [
+                    null
+                  ]
+                },
+                "MEPFinvoiceReceiverId": {
+                  "$id": "#/properties/Customers/items/properties/Addresses/items/properties/MEPFinvoiceReceiverId",
+                  "type": "null",
+                  "title": "The Mepfinvoicereceiverid Schema",
+                  "default": null,
+                  "examples": [
+                    null
+                  ]
+                },
+                "MEPFinvoiceOVTCode": {
+                  "$id": "#/properties/Customers/items/properties/Addresses/items/properties/MEPFinvoiceOVTCode",
+                  "type": "null",
+                  "title": "The Mepfinvoiceovtcode Schema",
+                  "default": null,
+                  "examples": [
+                    null
+                  ]
+                },
+                "Modified": {
+                  "$id": "#/properties/Customers/items/properties/Addresses/items/properties/Modified",
+                  "type": "string",
+                  "title": "The Modified Schema",
+                  "default": "",
+                  "examples": [
+                    "2019-10-07T11:44:02"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "ModifiedBy": {
+                  "$id": "#/properties/Customers/items/properties/Addresses/items/properties/ModifiedBy",
+                  "type": "string",
+                  "title": "The Modifiedby Schema",
+                  "default": "",
+                  "examples": [
+                    "dax_aos3"
+                  ],
+                  "pattern": "^(.*)$"
+                }
+              }
+            }
+          },
+          "Communications": {
+            "$id": "#/properties/Customers/items/properties/Communications",
+            "type": "null",
+            "title": "The Communications Schema",
+            "default": null,
+            "examples": [
+              null
+            ]
+          },
+          "ModifiedBy": {
+            "$id": "#/properties/Customers/items/properties/ModifiedBy",
+            "type": "string",
+            "title": "The Modifiedby Schema",
+            "default": "",
+            "examples": [
+              "dax_aos3"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "Created": {
+            "$id": "#/properties/Customers/items/properties/Created",
+            "type": "string",
+            "title": "The Created Schema",
+            "default": "",
+            "examples": [
+              "2019-10-07T11:43:58Z"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "Modified": {
+            "$id": "#/properties/Customers/items/properties/Modified",
+            "type": "string",
+            "title": "The Modified Schema",
+            "default": "",
+            "examples": [
+              "2019-10-28T10:29:24Z"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "Syncronized": {
+            "$id": "#/properties/Customers/items/properties/Syncronized",
+            "type": "string",
+            "title": "The Syncronized Schema",
+            "default": "",
+            "examples": [
+              "2019-10-28T10:29:24"
+            ],
+            "pattern": "^(.*)$"
+          }
+        }
+      }
+    }
+  }
+}

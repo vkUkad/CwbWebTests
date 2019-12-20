@@ -1,0 +1,13 @@
+com\cowab\testconfig\TestConfiguration.class
+com\cowabApiTests\Availability_BySkus.class
+com\cowab\login\Login.class
+com\cowab\testconfig\TestData.class
+com\cowabApiTests\Contact_ByCustomerNo.class
+com\cowab\cart\Cart.class
+com\cowab\wishlist\Wishlist.class
+com\cowab\checkout\Checkout.class
+com\cowabApiTests\Contact_ByEmail.class
+com\cowab\temptests\TempTest.class
+com\cowabApiTests\Draft.class
+com\cowab\temptests\TestTemplate.class
+com\cowab\search\Search.class
