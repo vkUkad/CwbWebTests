@@ -28,6 +28,7 @@ public class Cart extends TestConfiguration {
                 .verifyNumberOfProductsItCart(1);
     }
 
+
     @Test(description = "Check cart count indicator")
     //@Video
     public void verifyCartNumberIndicator() {

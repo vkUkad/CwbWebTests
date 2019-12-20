@@ -33,7 +33,6 @@ public class Wishlist {
                 .switchTabToShoppingLists()
                 .clickOnShareButton()
                 .typeRecieverEmail(userSE)
-
         ;
     }
 }
