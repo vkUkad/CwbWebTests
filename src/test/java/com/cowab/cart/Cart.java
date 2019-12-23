@@ -14,7 +14,7 @@ import static com.cowab.utils.driver.MyDriverManager.createWebDriver;
 @Feature("Cart flow")
 @Story("Cart flow")
 public class Cart extends TestConfiguration {
-//test 1
+//test 1/1
     @Test(description = "Add product to the cart")
     //@Video
     public void openCart() {
