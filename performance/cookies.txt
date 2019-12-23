@@ -1,2 +1,0 @@
-# JMeter generated Cookie file
-test.cowab.com	TRUE		FALSE	0	__RequestVerificationToken	${COOKIE____RequestVerificationToken}
