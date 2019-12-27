@@ -1,31 +1,34 @@
 package com.cowab.checkout;
 
-import com.codeborne.selenide.WebDriverRunner;
+import com.codeborne.selenide.Configuration;
 import com.cowab.data_generator.UserGenerator;
 import com.cowab.objects.User;
 import com.cowab.pages.BasePage;
 import com.cowab.testconfig.TestConfiguration;
-import com.cowab.utils.driver.MyDriverManager;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import java.awt.*;
 
 import static com.cowab.utils.Configuration.TESTING_URL_SE;
-import static com.cowab.utils.driver.MyDriverManager.createWebDriver;
 
 @Feature("Checkout")
 @Story("Checkout flow")
 public class Checkout extends TestConfiguration {
-    WebDriver driver = MyDriverManager.createWebDriver(Thread.currentThread().getStackTrace()[1].getMethodName());
+    @BeforeTest
+    public void doPreconditions() {
+        Configuration.remote = "http://192.168.0.217:8080/wd/hub/";
+        Configuration.driverManagerEnabled = false;
+    }
 
     @Test(description = "Checkout with new Company user")
     public void checkoutNewCompany() throws AWTException {
         User user = UserGenerator.generateUserSE();
-        WebDriverRunner.setWebDriver(createWebDriver(Thread.currentThread().getStackTrace()[1].getMethodName()));
+        //   WebDriverRunner.setWebDriver(createWebDriver(Thread.currentThread().getStackTrace()[1].getMethodName()));
         new BasePage().openMainPage(TESTING_URL_SE)
                 .selectCompanyVisitorType()
                 .openProductListingForQuery("bord")
@@ -50,7 +53,7 @@ public class Checkout extends TestConfiguration {
     @Test(description = "Checkout with new Private user")
     public void checkoutNewPrivate() throws AWTException {
         User user = UserGenerator.generateUserSE();
-        WebDriverRunner.setWebDriver(createWebDriver(Thread.currentThread().getStackTrace()[1].getMethodName()));
+        //    WebDriverRunner.setWebDriver(createWebDriver(Thread.currentThread().getStackTrace()[1].getMethodName()));
         new BasePage().openMainPage(TESTING_URL_SE)
                 .selectCompanyVisitorType()
                 .openProductListingForQuery("bord")
@@ -72,7 +75,7 @@ public class Checkout extends TestConfiguration {
 
     @Test(description = "Login on checkout with existing Company user")
     public void checkoutExistingCompany() {
-        WebDriverRunner.setWebDriver(createWebDriver(Thread.currentThread().getStackTrace()[1].getMethodName()));
+        //   WebDriverRunner.setWebDriver(createWebDriver(Thread.currentThread().getStackTrace()[1].getMethodName()));
         new BasePage().openMainPage(TESTING_URL_SE)
                 .selectCompanyVisitorType()
                 .openProductListingForQuery("bord")
@@ -86,7 +89,7 @@ public class Checkout extends TestConfiguration {
 
     @Test(description = "Login on checkout with existing Private user")
     public void checkoutExistingPrivate() {
-        WebDriverRunner.setWebDriver(createWebDriver(Thread.currentThread().getStackTrace()[1].getMethodName()));
+        //    WebDriverRunner.setWebDriver(createWebDriver(Thread.currentThread().getStackTrace()[1].getMethodName()));
         new BasePage().openMainPage(TESTING_URL_SE)
                 .selectCompanyVisitorType()
                 .openProductListingForQuery("bord")
@@ -100,7 +103,7 @@ public class Checkout extends TestConfiguration {
 
     @Test(description = "Login on checkout with existing Private user, full workflow")
     public void checkoutExistingPrivateFull() throws AWTException {
-        WebDriverRunner.setWebDriver(createWebDriver(Thread.currentThread().getStackTrace()[1].getMethodName()));
+        //    WebDriverRunner.setWebDriver(createWebDriver(Thread.currentThread().getStackTrace()[1].getMethodName()));
         new BasePage().openMainPage(TESTING_URL_SE)
                 .selectCompanyVisitorType()
                 .openProductListingForQuery("40046")
@@ -122,7 +125,7 @@ public class Checkout extends TestConfiguration {
     @Test(description = "Register new user and check 'newsletter subscription' functionality")
     public void checkoutNewsletterSubscriptionFunctionality() throws AWTException {
         User userSE = UserGenerator.generateUserSE();
-        WebDriverRunner.setWebDriver(createWebDriver(Thread.currentThread().getStackTrace()[1].getMethodName()));
+        //    WebDriverRunner.setWebDriver(createWebDriver(Thread.currentThread().getStackTrace()[1].getMethodName()));
         new BasePage().openMainPage(TESTING_URL_SE)
                 .selectCompanyVisitorType()
                 .registerCompanyUser(userSE)
@@ -151,6 +154,7 @@ public class Checkout extends TestConfiguration {
 
     @AfterTest
     public void closeBrowser() {
-        driver.close();
+        //No need to close with Selenoid
+        //driver.close();
     }
 }
